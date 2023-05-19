@@ -7,7 +7,7 @@ app.beginUndoGroup("Pre-comp 3");
 
 try {
 
-// CREATE FOLDER HIERARCHY START
+
 	var solids_folder_properties = {"name":"Solids","typeName":"Folder","label":2,"comment":""};
 	var solids_folder = findProjectItem(app.project.rootFolder, false, solids_folder_properties);
 	if (solids_folder === null) {
@@ -20,9 +20,9 @@ try {
 		particularassets_folder = app.project.items.addFolder(particularassets_folder_properties.name);
 		particularassets_folder.label = particularassets_folder_properties.label;
 	}
-// CREATE FOLDER HIERARCHY END
 
-// CREATE COMPOSITIONS START
+
+
 	var precomp3_comp_properties = {"name":"Pre-comp 3","typeName":"Composition","label":15,"comment":"","height":1080,"width":1920,"pixelAspect":1,"bgColor":[0.09019607843137,0.09019607843137,0.09019607843137],"duration":24.024024024024,"numLayers":1,"frameRate":29.9700012207031};
 	var precomp3_comp = app.project.items.addComp(precomp3_comp_properties.name, precomp3_comp_properties.width, precomp3_comp_properties.height, precomp3_comp_properties.pixelAspect, precomp3_comp_properties.duration, precomp3_comp_properties.frameRate);
 		precomp3_comp.time = 12.7794461127794;
@@ -83,9 +83,9 @@ try {
 		firts_comp.frameBlending = true;
 		firts_comp_populate = true;
 	}
-// CREATE COMPOSITIONS END
 
-// IMPORT FOOTAGE ITEMS START
+
+
 	var cubeWireframemov_footage_properties = {"name":"Cube Wireframe.mov","typeName":"Footage","label":3,"comment":"","mainSource":{"file":{"fullName":"/c/ProgramData/Red Giant/Trapcode Packs/TC14/Sprites/Common/3D Geometric Shapes/Cube Wireframe.mov"}}};
 	var cubeWireframemov_footage = findProjectItem(particularassets_folder, false, cubeWireframemov_footage_properties);
 	if (cubeWireframemov_footage === null) {
@@ -97,9 +97,9 @@ try {
 		cubeWireframemov_footage.parentFolder = particularassets_folder;
 		cubeWireframemov_footage.selected = false;
 	}
-// IMPORT FOOTAGE ITEMS END
 
-// CREATE SOLID LAYERS START
+
+
 	var blackSolid1_solid_properties = {"name":"Black Solid 1","typeName":"Footage","comment":"","label":1,"pixelAspect":1,"height":1080,"width":1920,"mainSource":{"color":[0,0,0]}};
 	var blackSolid1_solid = findProjectItem(solids_folder, false, blackSolid1_solid_properties);
 	if (blackSolid1_solid === null) {
@@ -118,11 +118,11 @@ try {
 			whiteSolid1_solid.parentFolder = solids_folder;
 		whiteSolid1_tempSolid.remove();
 	}
-// CREATE SOLID LAYERS END
 
-// Working with comp "Pre-comp 3", varName "precomp3_comp";
+
+
 	precomp3_comp.openInViewer();
-	// Add existing composition "Pre-comp 2", varName "precomp2_comp";
+	
 	var precomp2 = precomp3_comp.layers.add(precomp2_comp);
 		precomp2.moveToEnd();
 		var precomp2_marker1 = new MarkerValue("5");
@@ -136,9 +136,9 @@ try {
 			precomp2_marker2.setParameters(newMarkerParameters);
 			precomp2.property("ADBE Marker").setValueAtTime(13.5802469135802, precomp2_marker2);
 		precomp2.selected = false;
-// Working with comp "Pre-comp 2", varName "precomp2_comp";
+
 if (precomp2_comp_populate === true) {
-	// Add Light "LayerEmit [tomoya x nagisa afte", varName "layeremitTomoyaXNagisaAfte";
+	
 	var layeremitTomoyaXNagisaAfte = precomp2_comp.layers.addLight("LayerEmit main", [960, 540]);
 		layeremitTomoyaXNagisaAfte.lightType = LightType.SPOT;
 		layeremitTomoyaXNagisaAfte.enabled = false;
@@ -146,7 +146,7 @@ if (precomp2_comp_populate === true) {
 		layeremitTomoyaXNagisaAfte.moveToEnd();
 		layeremitTomoyaXNagisaAfte.property("ADBE Transform Group").property("ADBE Position").setValue([960,540,0]);
 		layeremitTomoyaXNagisaAfte.selected = false;
-	// Add existing Solid Layer "Black Solid 1", varName "blackSolid1_solid";
+	
 	var blackSolid1 = precomp2_comp.layers.add(blackSolid1_solid);
 		blackSolid1.inPoint = 12.379045712379;
 		blackSolid1.outPoint = 13.5802469135802;
@@ -208,7 +208,7 @@ if (precomp2_comp_populate === true) {
 		blackSolid1.property("ADBE Effect Parade").property(1).property("tc Particular-14992").setValue(1);
 		blackSolid1.property("ADBE Effect Parade").property(1).property("tc Particular-14487").setValue(1);
 		blackSolid1.selected = false;
-	// Add existing composition "second", varName "second_comp";
+	
 	var second = precomp2_comp.layers.add(second_comp);
 		second.startTime = 11.7450784117451;
 		second.motionBlur = true;
@@ -232,7 +232,7 @@ if (precomp2_comp_populate === true) {
 			applyEasing(secondTimeRemap, secondTimeRemap_keyTimesArray, [secondTimeRemap_easeInSpeedArray, secondTimeRemap_easeInInfluArray], [secondTimeRemap_easeOutSpeedArray, secondTimeRemap_easeOutInfluArray], [secondTimeRemap_keyInInterpolationType, secondTimeRemap_keyOutInterpolationType]);
 
 		second.selected = false;
-	// Add existing composition "firts", varName "firts_comp";
+	
 	var firts = precomp2_comp.layers.add(firts_comp);
 		firts.startTime = 10.4104104104104;
 		firts.inPoint = 11.7450784117451;
@@ -267,7 +267,7 @@ if (precomp2_comp_populate === true) {
 
 		firts.property("ADBE Mask Parade").property(1).property("ADBE Mask Feather").setValue([37,37]);
 		firts.selected = false;
-	// Add existing footage item "Cube Wireframe.mov", varName "cubeWireframemov_footage";
+	
 	var particularSpriteMaster = precomp2_comp.layers.add(cubeWireframemov_footage);
 		particularSpriteMaster.name = "Particular Sprite Master";
 		particularSpriteMaster.enabled = false;
@@ -275,17 +275,17 @@ if (precomp2_comp_populate === true) {
 		particularSpriteMaster.selected = false;
 
 
-	// Apply outOfRange values
+	
 		blackSolid1.property("ADBE Effect Parade").property(1).property("tc Particular-0115").setValue(3);
 		blackSolid1.property("ADBE Effect Parade").property(1).property("tc Particular-0066").setValue(5);
 
-	// Apply parents
+	
 		layeremitTomoyaXNagisaAfte.setParentWithJump(second);
 
 }
-// Working with comp "second", varName "second_comp";
+
 if (second_comp_populate === true) {
-	// Add existing composition "firts", varName "firts_comp";
+	
 	var firts1 = second_comp.layers.add(firts_comp);
 		firts1.startTime = -1.33466800133467;
 		firts1.inPoint = 0;
@@ -314,12 +314,12 @@ if (second_comp_populate === true) {
 		firts1.selected = false;
 
 
-	// Apply outOfRange values
+	
 		blackSolid1.property("ADBE Effect Parade").property(1).property("tc Particular-0115").setValue(3);
 		blackSolid1.property("ADBE Effect Parade").property(1).property("tc Particular-0066").setValue(5);
 
 }
-// Working with comp "firts", varName "firts_comp";
+
 if (firts_comp_populate === true) {
 	var yourFootage = firts_comp.layers.addText("YOUR FOOTAGE");
 		yourFootage.name = "YOUR FOOTAGE";
@@ -338,13 +338,13 @@ if (firts_comp_populate === true) {
 				yourFootage_TextDocument.horizontalScale = 1;
 				yourFootage_TextDocument.baselineShift = 0;
 				yourFootage_TextDocument.tsume = 0;
-				// These values are read-only. You have to set them manually in the comp.
-				// yourFootage_TextDocument.fauxBold = false;
-				// yourFootage_TextDocument.fauxItalic = false;
-				// yourFootage_TextDocument.allCaps = true;
-				// yourFootage_TextDocument.smallCaps = false;
-				// yourFootage_TextDocument.superscript = false;
-				// yourFootage_TextDocument.subscript = false;
+				
+				
+				
+				
+				
+				
+				
 			}
 			if (parseFloat(app.version) >= 13.6 ) {
 				yourFootage_TextDocument.leading = 245;
@@ -353,7 +353,7 @@ if (firts_comp_populate === true) {
 			yourFootage_TextProp.setValue(yourFootage_TextDocument);
 		yourFootage.property("ADBE Transform Group").property("ADBE Position").setValue([949.273956298828,636.112507641315,0]);
 		yourFootage.selected = false;
-	// Add existing Solid Layer "White Solid 1", varName "whiteSolid1_solid";
+	
 	var whiteSolid1 = firts_comp.layers.add(whiteSolid1_solid);
 		whiteSolid1.moveToEnd();
 		whiteSolid1.property("ADBE Effect Parade").addProperty("ADBE Checkerboard");
@@ -362,13 +362,13 @@ if (firts_comp_populate === true) {
 		whiteSolid1.selected = false;
 
 
-	// Apply outOfRange values
+
 		blackSolid1.property("ADBE Effect Parade").property(1).property("tc Particular-0115").setValue(3);
 		blackSolid1.property("ADBE Effect Parade").property(1).property("tc Particular-0066").setValue(5);
 
 }
 
-// Remove empty Solids folder
+
 	var tempNullComp = app.project.items.addComp("tempNullComp", 100, 100, 1, 1, 24);
 	var tempNullLayer = tempNullComp.layers.addNull();
 	var nullFolder = tempNullLayer.source.parentFolder;
